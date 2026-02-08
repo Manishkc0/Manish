@@ -75,17 +75,6 @@ function App() {
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
-  const skills = [
-    { name: 'HTML', level: 90 },
-    { name: 'CSS', level: 90 },
-    { name: 'JavaScript', level: 70 },
-    { name: 'C++', level: 80 },
-    { name: 'DSA', level: 65 },
-    { name: 'DBMS', level: 85 },
-    { name: 'Editing', level: 79 },
-    { name: 'MS Office', level: 75 },
-  ];
-
   const projects = [
     {
       title: 'Weather Monitoring App',

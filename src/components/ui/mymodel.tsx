@@ -9,7 +9,6 @@ function Model3D({ modelPath, zoom, scrollRotation, animationType = 'rotate' }: 
   const groupRef = useRef<THREE.Group>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [model, setModel] = useState<THREE.Group | null>(null);
-  const [useFallback, setUseFallback] = useState(false);
 
   // Load model manually without Suspense
   useEffect(() => {
@@ -24,7 +23,6 @@ function Model3D({ modelPath, zoom, scrollRotation, animationType = 'rotate' }: 
         scene.position.set(0, 0, 0);
         scene.rotation.set(0, 0, 0);
         setModel(scene);
-        setUseFallback(false);
         console.log('Model loaded successfully');
       },
       (progress) => {
@@ -32,7 +30,6 @@ function Model3D({ modelPath, zoom, scrollRotation, animationType = 'rotate' }: 
       },
       (error) => {
         console.error('Failed to load model:', error);
-        setUseFallback(true);
       }
     );
   }, [modelPath]);
