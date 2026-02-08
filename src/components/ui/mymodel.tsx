@@ -92,10 +92,6 @@ function Model3D({ modelPath, zoom, scrollRotation, animationType = 'rotate' }: 
     camera.position.z = 10 / zoom;
   });
 
-  if (!model) {
-    return null; // Don't show fallback, just wait for model to load
-  }
-
   return <group ref={groupRef}>{model && <primitive object={model} />}</group>;
 }
 
